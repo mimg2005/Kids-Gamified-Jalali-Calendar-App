@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* اضافه کردن فونت‌های آنلاین (اگر فایل فونت ندارید) */
+@import url('https://fonts.googleapis.com/css2?family=Lalezar&display=swap');
+
+@layer base {
+  body {
+    @apply bg-blue-50 text-gray-800;
+    font-family: 'Lalezar', cursive, sans-serif; /* فونت پیش‌فرض */
+    direction: rtl; /* راست‌چین کردن کل برنامه */
+  }
+}
+
+@layer utilities {
+  /* مخفی کردن اسکرول‌بار (برای کروم، سافاری و اپرا) */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* مخفی کردن اسکرول‌بار (برای فایرفاکس و اج) */
+  .no-scrollbar {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+  }
+
+  /* تنظیم فاصله امن برای گوشی‌های آیفون (تداخل نداشتن با خط پایین گوشی) */
+  .pb-safe {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+}
